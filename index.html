@@ -1,135 +1,58 @@
+
 <!doctype html>
 
-<html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        >
-        <title>Chatbot</title>
-    </head>
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Chatbot</title>
+  </head>
+  <body>
 
-        <main id="container"></main>
+    <div id="container"></div>
 
-        <script
-            crossorigin
-            src="https://unpkg.com/react@18/umd/react.development.js"
-        ></script>
-        <script
-            crossorigin
-            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-        ></script>
-        <script
-            crossorigin
-            src="https://unpkg.com/@babel/standalone/babel.min.js"
-        ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js">
+    </script>
+    
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js">
+    </script>
 
-        <script type="text/babel">
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js">
+    </script>
 
-            function ChatInput() {
-                return (
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Send a message to Chatbot..."
-                            size="30"
-                        />
-                        <button>Enviar</button>
-                    </div>
-                );
-            };
+    <script
+      type="text/babel"
+      src="./src/components/ChatInput.js">
+    </script>
 
-            function ChatMessage({ message, sender }) {
+    <script
+      type="text/babel"
+      src="./src/components/ChatMessage.js">
+    </script>
 
-                return (
-                    <div>
-                        {sender === 'robot' && (
-                            <img src="./assent/robot.png" width="50" />
-                        )}
-                        {message}
-                        {sender === 'user' && (
-                            <img src="./assent/user.png" width="50" />
-                        )}
-                    </div>
-                );
-            };
+    <script
+      type="text/babel"
+      src="./src/components/ChatMessages.js">
+    </script>
 
-            function Chatmessages(){
-                const chatMessages = [{
-                    message: "Hello",
-                    sender: "user",
-                    id: '001'
-                }, {
-                    message: "Hello, how can i help you?",
-                    sender: "robot",
-                    id: '002'
-                }, {
-                    message: "Get date today",
-                    sender: "user",
-                    id: '003'
-                }, {
-                    message: "Today is September 29",
-                    sender: "robot",
-                    id: '004'
-                }]; 
+    <script
+      type="text/babel"
+      src="./src/components/App.js">
+    </script>
 
-                function sendMessage(){
-                    chatMessages.push({
-                        message: 'teste',
-                        sender: 'user',
-                        id: '005'
-                    })           
-                    
-                    console.log(chatMessages)
-                }
-
-
-                function sendMessage(){
-                    chatMessages.push({
-                        message: 'Teste',
-                        sender: 'user',
-                        id: crypto.randomUUID()
-                    });
-
-                    console.log(chatMessages);
-                };
-
-                
-
-
-                return (    
-                    <>
-                        <button onClick={sendMessage}>Send Message </button>  
-                        {chatMessages.map(chatMessage => {
-                            return(
-                                                
-                                <ChatMessage
-                                    message={chatMessage.message}
-                                    sender={chatMessage.sender}
-                                    key={chatMessage.id}
-                                />
-                                                    
-                            );
-                        })};
-                    </>
-                );
-            }
-
-            function App() {
-
-                return (
-                    <>
-                        <ChatInput />
-                        <Chatmessages />
-                    </>
-                );
-            };
-
-            const container = document.querySelector('#container');
-            ReactDOM.createRoot(container).render(<App />);
-
-        </script>
-    </body>
+    <script
+      type="text/babel"
+      src="./src/main.js">
+    </script>
+    
+  </body>
 </html>
