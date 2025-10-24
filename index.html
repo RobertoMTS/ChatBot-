@@ -9,10 +9,19 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Chatbot</title>
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @import url(./style.css);
+    </style>
   </head>
   <body>
 
     <div id="container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <script
       crossorigin
@@ -22,6 +31,11 @@
     <script
       crossorigin
       src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js">
+    </script>
+
+     <script
+      crossorigin
+      src="https://alexgeracaotech.github.io/responses/response.js">
     </script>
 
     <script
